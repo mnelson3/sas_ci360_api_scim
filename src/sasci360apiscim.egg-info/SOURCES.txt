@@ -1,0 +1,15 @@
+LICENSE
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/sasci360apiscim/__init__.py
+src/sasci360apiscim/main.py
+src/sasci360apiscim.egg-info/PKG-INFO
+src/sasci360apiscim.egg-info/SOURCES.txt
+src/sasci360apiscim.egg-info/dependency_links.txt
+src/sasci360apiscim.egg-info/top_level.txt
+src/sasci360apiscim/groups/__init__.py
+src/sasci360apiscim/roles/__init__.py
+src/sasci360apiscim/schemas/__init__.py
+src/sasci360apiscim/users/__init__.py

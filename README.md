@@ -5,6 +5,9 @@
 ### Overview
 
 Identity Management for SAS Customer Intelligence 360. Use this REST API to manage users and roles. The System for Cross-domain Identity Management (SCIM) API for SAS Customer Intelligence 360 is a centralized, web-based repository that enables an organization to manage identity resources such as users, groups, and roles. The SCIM REST API is based on the SCIM industry standard.
+
+For detailed information on REST API:<br>
+https://support.sas.com/documentation/onlinedoc/ci/ci360-apis/scim/v2/redoc.html
 <br><br>
 
 ### Table of Contents
@@ -25,13 +28,18 @@ This topic contains the following sections:
 
  * Required Python: >=3.6
  * Customer Intelligence 360 Tenant with Administrative Rights
- * SAS CI360 API Core Library
-    - pip install sasci360apicore --extra-index-url https://sas_ci360_api_core:myV8ZHuhvPXrqyeYScq8@gitlab.sas.com/api/v4/projects/35734/packages/pypi/simple
+ * SAS CI360 API Core Library:<br>
+   https://gitlab.sas.com/psd-ci-enablement/sas_ci360_api_core
 <br><br>
 
 ### Installation
 
-Loren ipsum
+To install the SAS CI360 API System for Cross-Domain Identity Management Library:
+ 1. Open a terminal window (UNIX/Mac) or command prompt (Win)
+ 1. Copy and paste the following line at the cursor<br>
+    pip install sasci360apiscim --extra-index-url https://sas_ci360_api_scim:_bcSSf69XDDpicNTAMwy@gitlab.sas.com/api/v4/projects/49204/packages/pypi/simple
+ 1. Press "Enter"<br>
+    The SAS CI360 API System for Cross-Domain Identity Management Library should install
 <br><br>
 
 ### Getting Started
@@ -41,15 +49,37 @@ Loren ipsum
 
 ### API System for Cross-Domain Identity Management Code
 
-1. Groups - Contains operations for managing groups.
-1. Roles - Contains operations for managing roles.
-1. Configuration and Schemas - Contains operations for configuration and schemas.
-1. Users - Contains operations for managing users.
+ 1. Groups - Contains operations for managing groups.
+ 1. Roles - Contains operations for managing roles.
+ 1. Configuration and Schemas - Contains operations for configuration and schemas.
+ 1. Users - Contains operations for managing users.
 <br><br>
 
 ### Troubleshooting
 
-Loren ipsum
+For issues specific to sasci360apicore or sasci360apiscim try updating the libraries.
+
+To update sasci360apicore:
+ 1. Open a terminal window (UNIX/Mac) or command prompt (Win)
+ 1. Copy and paste the following line at the cursor<br>
+    pip uninstall sasci360apicore
+ 1. Press "Enter"<br>
+    The SAS CI360 API Core Library should uninstall
+ 1. Copy and paste the following line at the cursor<br>
+    pip install sasci360apicore --extra-index-url https://sas_ci360_api_core:myV8ZHuhvPXrqyeYScq8@gitlab.sas.com/api/v4/projects/35734/packages/pypi/simple
+ 1. Press "Enter"<br>
+    The SAS CI360 API Core Library should install
+
+To update sasci360apiscim:
+ 1. Open a terminal window (UNIX/Mac) or command prompt (Win)
+ 1. Copy and paste the following line at the cursor<br>
+    pip uninstall sasci360apiscim
+ 1. Press "Enter"<br>
+    The SAS CI360 API System for Cross-Domain Identity Management Library should uninstall
+ 1. Copy and paste the following line at the cursor<br>
+    pip install sasci360apiscim --extra-index-url https://sas_ci360_api_scim:_bcSSf69XDDpicNTAMwy@gitlab.sas.com/api/v4/projects/49204/packages/pypi/simple
+ 1. Press "Enter"<br>
+    The SAS CI360 API System for Cross-Domain Identity Management Library should install
 <br><br>
 
 ### Contributing

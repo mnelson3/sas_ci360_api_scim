@@ -35,7 +35,7 @@ This topic contains the following sections:
 ### Installation
 
 To install the SAS CI360 API System for Cross-Domain Identity Management Library:
- 1. Open a terminal window (UNIX/Mac) or command prompt (Win)
+ 1. Open a terminal window (Unix/macOS) or command prompt (Windows)
  1. Copy and paste the following line at the cursor<br>
     pip install sasci360apiscim --extra-index-url https://sas_ci360_api_scim:_bcSSf69XDDpicNTAMwy@gitlab.sas.com/api/v4/projects/49204/packages/pypi/simple
  1. Press "Enter"<br>
@@ -44,7 +44,7 @@ To install the SAS CI360 API System for Cross-Domain Identity Management Library
 
 ### Getting Started
 
-Loren ipsum
+While this library is available for review, please note that it is considered a work in process and NOT considered "released for production".
 <br><br>
 
 ### API System for Cross-Domain Identity Management Code
@@ -60,7 +60,7 @@ Loren ipsum
 For issues specific to sasci360apicore or sasci360apiscim try updating the libraries.
 
 To update sasci360apicore:
- 1. Open a terminal window (UNIX/Mac) or command prompt (Win)
+ 1. Open a terminal window (Unix/macOS) or command prompt (Windows)
  1. Copy and paste the following line at the cursor<br>
     pip uninstall sasci360apicore
  1. Press "Enter"<br>
@@ -71,7 +71,7 @@ To update sasci360apicore:
     The SAS CI360 API Core Library should install
 
 To update sasci360apiscim:
- 1. Open a terminal window (UNIX/Mac) or command prompt (Win)
+ 1. Open a terminal window (Unix/macOS) or command prompt (Windows)
  1. Copy and paste the following line at the cursor<br>
     pip uninstall sasci360apiscim
  1. Press "Enter"<br>

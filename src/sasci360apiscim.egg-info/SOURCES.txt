@@ -4,7 +4,7 @@ README.md
 pyproject.toml
 setup.cfg
 src/sasci360apiscim/__init__.py
-src/sasci360apiscim/main.py
+src/sasci360apiscim/base.py
 src/sasci360apiscim.egg-info/PKG-INFO
 src/sasci360apiscim.egg-info/SOURCES.txt
 src/sasci360apiscim.egg-info/dependency_links.txt

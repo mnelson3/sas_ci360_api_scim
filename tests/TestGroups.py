@@ -19,23 +19,21 @@ from sasci360apiscim import groups
 class TestGroups(unittest.TestCase):
 
 	def setUp(self) -> None:
-		self.groups = groups.Groups()
+		algorithm = "HS256"
+		api = "/scim/v2/"
+		encoding = "UTF-8"
+		host = "extapigwservice-prod.ci360.sas.com"
+		secret_key = "NzY4OGlubjlnbWc0ZThrMmVkY2xkMThtN2ZhNWtlZg=="
+		tenant_id = "021fe6a0b200013b31620eb6"
 
-		# algorithm = "HS256"
-		# api = "/scim/v2/"
-		# encoding = "UTF-8"
-		# host = "extapigwservice-prod.ci360.sas.com"
-		# secret_key = "NzY4OGlubjlnbWc0ZThrMmVkY2xkMThtN2ZhNWtlZg=="
-		# tenant_id = "021fe6a0b200013b31620eb6"
-		#
-		# self.groups = groups.Groups(
-		# 	algorithm=algorithm,
-		# 	api=api,
-		# 	encoding=encoding,
-		# 	host=host,
-		# 	secret_key=secret_key,
-		# 	tenant_id=tenant_id
-		# )
+		self.groups = groups.Groups(
+			algorithm=algorithm,
+			api=api,
+			encoding=encoding,
+			host=host,
+			secret_key=secret_key,
+			tenant_id=tenant_id
+		)
 
 	def test_get_groups(self):
 		"""

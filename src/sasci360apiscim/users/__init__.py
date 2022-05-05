@@ -1,25 +1,11 @@
 #! /usr/local/bin/python3
 # -*- mode: python ; coding: utf-8 -*-
 
-import logging
-import os
-import sys
 import requests
-from pathlib import Path
-from sasci360apicore import connection
-from sasci360apiscim.main import Main
-
-current_file = __file__
-real_path = os.path.realpath(current_file)
-dir_path = os.path.dirname(real_path)
-src_path = os.path.abspath(os.path.join(dir_path, os.pardir))
-root_path = os.path.abspath(os.path.join(src_path, os.pardir))
-pkg_path = os.path.abspath(os.path.join(root_path, os.pardir))
-
-sys.path.append(dir_path)
+from sasci360apiscim.base import Base
 
 
-class Users(Main):
+class Users(Base):
 	"""
 	Users Module
 	Contains operations for managing users
@@ -30,34 +16,8 @@ class Users(Main):
 		5. delete_user(self, user_id: str) -> requests.Response
 	"""
 
-	def __init__(self) -> None:
-		super().__init__()
-		self._log_file = Path("{0}{1}{2}".format(pkg_path, "/logs/", "users.log"))
-		self.logger = logging.getLogger(__name__)
-		self.logger.setLevel(logging.INFO)
-		handler = logging.FileHandler(self._log_file)
-		handler.setLevel(logging.INFO)
-		self.logger.addHandler(handler)
-
-		self.connection = connection.Connection()
-
-		# if kwargs["algorithm"] is None:
-		# 	self.algorithm = "HS256"
-		# else:
-		# 	self.algorithm = kwargs["algorithm"]
-		# self.api = kwargs["api"]
-		# if kwargs["encoding"] is None:
-		# 	self.encoding = "UTF-8"
-		# else:
-		# 	self.encoding = kwargs["encoding"]
-		# self.host = kwargs["host"]
-		# self.secret_key = kwargs["secret_key"]
-		# self.tenant_id = kwargs["tenant_id"]
-		#
-		# self.connection = connection.Connection()
-		# self.encryption = encryption.Encryption(algorithm=self.algorithm, encoding=self.encoding)
-		#
-		# self.token = self.encryption.generate_jwt(tenant_id=self.tenant_id, secret_key=self.secret_key)
+	def __init__(self, algorithm, api, encoding, host, secret_key, tenant_id) -> None:
+		super().__init__(algorithm, api, encoding, host, secret_key, tenant_id)
 
 	def get_users(self, **kwargs) -> requests.Response:
 		"""
@@ -71,6 +31,9 @@ class Users(Main):
 		:rtype: requests.Response
 		"""
 		result = None
+		token = self.token
+		api = self.api
+		host = self.host
 		try:
 			query_string = "?"
 			if "start_index" in kwargs:
@@ -86,15 +49,14 @@ class Users(Main):
 			action = "GET"
 			data = None
 			headers = {
-				# "Accept": "application/vnd.sas.api+json",
 				"Content-Type": "application/json",
-				"Authorization": "Bearer {0}".format(self.token)
+				"Authorization": "Bearer {0}".format(token)
 			}
 			params = None
 			res_query_string = lambda x: x if len(x) > 1 else x[:-1]
 			api_path = "/Users{0}".format(res_query_string(query_string))
-			url = "https://{0}{1}{2}".format(self.host, self.api, api_path)
-			result = self.connection.conn(self, action=action, data=data, headers=headers, params=params, url=url)
+			url = "https://{0}{1}{2}".format(host, api, api_path)
+			result = self.connection.connect(action=action, data=data, headers=headers, params=params, url=url)
 		except (AttributeError, Exception) as e:
 			self.logger.exception("Exception occurred: {}".format(str(e)))
 		finally:
@@ -110,6 +72,9 @@ class Users(Main):
 		:rtype: requests.Response
 		"""
 		result = None
+		token = self.token
+		api = self.api
+		host = self.host
 		if user_id is None:
 			raise Exception("User ID is missing.")
 		try:
@@ -121,15 +86,14 @@ class Users(Main):
 			action = "GET"
 			data = None
 			headers = {
-				# "Accept": "application/vnd.sas.api+json",
 				"Content-Type": "application/json",
-				"Authorization": "Bearer {0}".format(self.token)
+				"Authorization": "Bearer {0}".format(token)
 			}
 			params = None
 			res_query_string = lambda x: x if len(x) > 1 else x[:-1]
 			api_path = "/Users/{0}{1}".format(user_id, res_query_string(query_string))
-			url = "https://{0}{1}{2}".format(self.host, self.api, api_path)
-			result = self.connection.conn(self, action=action, data=data, headers=headers, params=params, url=url)
+			url = "https://{0}{1}{2}".format(host, api, api_path)
+			result = self.connection.connect(action=action, data=data, headers=headers, params=params, url=url)
 		except (AttributeError, Exception) as e:
 			self.logger.exception("Exception occurred: {}".format(str(e)))
 		finally:
@@ -143,18 +107,20 @@ class Users(Main):
 		:rtype: requests.Response
 		"""
 		result = None
+		token = self.token
+		api = self.api
+		host = self.host
 		try:
 			action = "POST"
 			data = payload
 			headers = {
-				# "Accept": "application/vnd.sas.api+json",
 				"Content-Type": "application/json",
-				"Authorization": "Bearer {0}".format(self.token)
+				"Authorization": "Bearer {0}".format(token)
 			}
 			params = None
 			api_path = "/Users"
-			url = "https://{0}{1}{2}".format(self.host, self.api, api_path)
-			result = self.connection.conn(self, action=action, data=data, headers=headers, params=params, url=url)
+			url = "https://{0}{1}{2}".format(host, api, api_path)
+			result = self.connection.connect(action=action, data=data, headers=headers, params=params, url=url)
 		except (AttributeError, Exception) as e:
 			self.logger.exception("Exception occurred: {}".format(str(e)))
 		finally:
@@ -169,20 +135,22 @@ class Users(Main):
 		:rtype: requests.Response
 		"""
 		result = None
+		token = self.token
+		api = self.api
+		host = self.host
 		if user_id is None:
 			raise Exception("User ID is missing.")
 		try:
 			action = "PATCH"
 			data = payload
 			headers = {
-				# "Accept": "application/vnd.sas.api+json",
 				"Content-Type": "application/json",
-				"Authorization": "Bearer {0}".format(self.token)
+				"Authorization": "Bearer {0}".format(token)
 			}
 			params = None
 			api_path = "/Users/{0}".format(user_id)
-			url = "https://{0}{1}{2}".format(self.host, self.api, api_path)
-			result = self.connection.conn(self, action=action, data=data, headers=headers, params=params, url=url)
+			url = "https://{0}{1}{2}".format(host, api, api_path)
+			result = self.connection.connect(action=action, data=data, headers=headers, params=params, url=url)
 		except (AttributeError, Exception) as e:
 			self.logger.exception("Exception occurred: {}".format(str(e)))
 		finally:
@@ -196,20 +164,22 @@ class Users(Main):
 		:rtype: requests.Response
 		"""
 		result = None
+		token = self.token
+		api = self.api
+		host = self.host
 		if user_id is None:
 			raise Exception("User ID is missing.")
 		try:
 			action = "DELETE"
 			data = None
 			headers = {
-				# "Accept": "application/vnd.sas.api+json",
 				"Content-Type": "application/json",
-				"Authorization": "Bearer {0}".format(self.token)
+				"Authorization": "Bearer {0}".format(token)
 			}
 			params = None
 			api_path = "/Users/{0}".format(user_id)
-			url = "https://{0}{1}{2}".format(self.host, self.api, api_path)
-			result = self.connection.conn(self, action=action, data=data, headers=headers, params=params, url=url)
+			url = "https://{0}{1}{2}".format(host, api, api_path)
+			result = self.connection.connect(action=action, data=data, headers=headers, params=params, url=url)
 		except (AttributeError, Exception) as e:
 			self.logger.exception("Exception occurred: {}".format(str(e)))
 		finally:
@@ -217,4 +187,5 @@ class Users(Main):
 
 
 if __name__ == "__main__":
+	# noinspection PyArgumentList
 	Users.__init__(Users())

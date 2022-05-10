@@ -188,4 +188,4 @@ class Users(Base):
 
 if __name__ == "__main__":
 	# noinspection PyArgumentList
-	Users.__init__(Users())
+	Users()

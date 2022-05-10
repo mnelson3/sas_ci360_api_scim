@@ -219,4 +219,4 @@ class Groups(Base):
 
 if __name__ == "__main__":
 	# noinspection PyArgumentList
-	Groups.__init__(Groups())
+	Groups()

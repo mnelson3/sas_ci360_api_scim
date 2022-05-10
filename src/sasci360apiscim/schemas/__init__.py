@@ -101,4 +101,4 @@ class Schemas(Base):
 
 if __name__ == "__main__":
 	# noinspection PyArgumentList
-	Schemas.__init__(Schemas())
+	Schemas()

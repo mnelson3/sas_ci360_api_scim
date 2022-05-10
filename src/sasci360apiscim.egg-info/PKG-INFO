@@ -5,9 +5,7 @@ Summary: System for Cross-domain Identity Management REST API for SAS Customer I
 Home-page: https://gitlab.sas.com/psd-ci-enablement/sas_ci360_api_scim
 Author: Mark Nelson
 Author-email: Mark.Nelson@sas.com
-License: UNKNOWN
 Project-URL: Bug Tracker, https://gitlab.sas.com/psd-ci-enablement/sas_ci360_api_scim/issues
-Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
@@ -114,5 +112,3 @@ This project is licensed under the [Apache 2.0 License](LICENSE).
 
 For more information, see [REST APIs](https://go.documentation.sas.com/doc/en/cintcdc/production.a/cintapis/ch-rest-apis.htm).
 <br><br>
-
-

@@ -25,4 +25,4 @@ class Base:
 
 if __name__ == "__main__":
 	# noinspection PyArgumentList
-	Base.__init__(Base())
+	Base()

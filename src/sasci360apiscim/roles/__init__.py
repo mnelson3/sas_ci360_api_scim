@@ -130,4 +130,4 @@ class Roles(Base):
 
 if __name__ == "__main__":
 	# noinspection PyArgumentList
-	Roles.__init__(Roles())
+	Roles()

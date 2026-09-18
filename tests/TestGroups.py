@@ -12,6 +12,7 @@ Contains operations for managing groups
 	6. delete_group(self, group_id: str) -> requests.Response
 """
 
+import os
 import unittest
 from sasci360apiscim import groups
 
@@ -22,9 +23,9 @@ class TestGroups(unittest.TestCase):
 		algorithm = "HS256"
 		api = "/scim/v2/"
 		encoding = "UTF-8"
-		host = "extapigwservice-prod.ci360.sas.com"
-		secret_key = "NzY4OGlubjlnbWc0ZThrMmVkY2xkMThtN2ZhNWtlZg=="
-		tenant_id = "021fe6a0b200013b31620eb6"
+		host = os.environ.get("CI360_HOST", "extapigwservice-prod.ci360.sas.com")
+		secret_key = os.environ.get("CI360_SECRET_KEY", "changeme")
+		tenant_id = os.environ.get("CI360_TENANT_ID", "changeme")
 
 		self.groups = groups.Groups(
 			algorithm=algorithm,

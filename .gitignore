@@ -1,0 +1,13 @@
+.idea
+.pytest_cache
+.vscode
+/.idea
+/.ptest_cache
+/.vscode
+/logs/*
+/venv
+__pycache__
+.DS_Store
+build/
+dist/
+*.egg-info/

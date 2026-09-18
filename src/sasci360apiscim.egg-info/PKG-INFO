@@ -4,7 +4,7 @@ Version: 0.0.1
 Summary: System for Cross-domain Identity Management REST API for SAS Customer Intelligence 360
 Home-page: https://gitlab.sas.com/psd-ci-enablement/sas_ci360_api_scim
 Author: Mark Nelson
-Author-email: Mark.Nelson@sas.com
+Author-email: support@nelsongrey.com
 Project-URL: Bug Tracker, https://gitlab.sas.com/psd-ci-enablement/sas_ci360_api_scim/issues
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License

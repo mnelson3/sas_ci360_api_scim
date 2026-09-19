@@ -2,6 +2,8 @@
 
 ## SAS 360 API SYSTEM FOR CROSS-DOMAIN IDENTITY MANAGEMENT (SCIM) LIBRARY
 
+> **Status: superseded.** This library has been replaced by [`sas-ci360-sol-identity`](https://github.com/mnelson3/sas-ci360-sol-identity) — the same SCIM API, rebuilt with mockable unit tests, typed exceptions, and safer configuration defaults. This repo is kept for historical reference; start new work in `sas-ci360-sol-identity` instead.
+
 ### Overview
 
 Identity Management for SAS Customer Intelligence 360. Use this REST API to manage users and roles. The System for Cross-domain Identity Management (SCIM) API for SAS Customer Intelligence 360 is a centralized, web-based repository that enables an organization to manage identity resources such as users, groups, and roles. The SCIM REST API is based on the SCIM industry standard.

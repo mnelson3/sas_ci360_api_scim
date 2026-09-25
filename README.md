@@ -2,7 +2,7 @@
 
 ## SAS 360 API SYSTEM FOR CROSS-DOMAIN IDENTITY MANAGEMENT (SCIM) LIBRARY
 
-> **Status: superseded.** This library has been replaced by [`sas-ci360-sol-identity`](https://github.com/mnelson3/sas-ci360-sol-identity) — the same SCIM API, rebuilt with mockable unit tests, typed exceptions, and safer configuration defaults. This repo is kept for historical reference; start new work in `sas-ci360-sol-identity` instead. This repo's final implementation is frozen at the `archive/superseded` branch.
+> **Status: superseded.** This library has been replaced by [`sas-ci360-sdk`](https://github.com/mnelson3/sas-ci360-sdk) — the same SCIM API, rebuilt with mockable unit tests, typed exceptions, and safer configuration defaults, now part of the consolidated SAS CI360 SDK monorepo. This repo is kept for historical reference; start new work in `sas-ci360-sdk` instead. This repo's final implementation is frozen at the `archive/superseded` branch.
 
 ### Overview
 
